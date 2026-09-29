@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TokenLab | Core JWT Inspector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========================================================
+         1. TOP NAVIGATION BAR COMPONENT
+    ========================================================= -->
+    <header class="NavBar">
+        <!-- Brand Identity -->
+        <a href="#" class="BrandLogo">
+            <span class="BrandLogoIcon">◆</span>
+            <span class="BrandLogoText">Token<span>Lab</span></span>
+        </a>
+
+        <!-- Action Controls: Theme Switcher -->
+        <div class="NavActions">
+            <label class="ThemeSwitchButton" for="switch">
+                <div class="ThemeSwitchOuter">
+                    <input id="switch" type="checkbox">
+                    <div class="ThemeSwitchTrack">
+                        <span class="ThemeSwitchToggle"></span>
+                        <span class="ThemeIcon MoonIcon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                            </svg>
+                        </span>
+                        <span class="ThemeIcon SunIcon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <circle cx="12" cy="12" r="5" />
+                                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </header>
+
+    <!-- ========================================================
+         2. MAIN APPLICATION CONTENT
+    ========================================================= -->
+    <main class="AppContainer">
+        
+        <!-- Hero Introduction Header -->
+        <section class="HeroBanner">
+            <span class="HeroBadge">JWT DECODE TOOL</span>
+            <h1>Decode your <span>JWT</span> tokens.</h1>
+            <p>Inspect the structure of a JSON Web Token directly in your browser.</p>
+        </section>
+
+        <!-- Interactive Token Input Workspace -->
+        <section class="TokenSection">
+            <div class="SectionHeader">
+                <div>
+                    <h2>Your Token</h2>
+                    <p>Paste your JWT below to inspect its contents.</p>
+                </div>
+                <button id="clearBtn" class="ClearBtn" type="button">Clear</button>
+            </div>
+            
+            <textarea id="tokenInput" class="TokenInput" placeholder="Paste your JWT token here..."></textarea>
+        </section>
+
+        <!-- Real-Time Inspection Results Grid -->
+        <section class="ResultsGrid">
+            
+            <!-- Output Block: Decoded Header -->
+            <article class="ResultCard">
+                <header class="CardHeader">
+                    <div>
+                        <span class="CardLabel">01</span>
+                        <h2>Header</h2>
+                    </div>
+                    <button class="CopyBtn" data-target="headerOutput" type="button">Copy</button>
+                </header>
+                <div id="headerOutput" class="JsonOutput" aria-live="polite">{}</div>
+            </article>
+
+            <!-- Output Block: Decoded Payload -->
+            <article class="ResultCard">
+                <header class="CardHeader">
+                    <div>
+                        <span class="CardLabel">02</span>
+                        <h2>Payload</h2>
+                    </div>
+                    <button class="CopyBtn" data-target="payloadOutput" type="button">Copy</button>
+                </header>
+                <div id="payloadOutput" class="JsonOutput" aria-live="polite">{}</div>
+            </article>
+
+            <!-- Output Block: Raw Signature -->
+            <article class="ResultCard SignatureCard">
+                <header class="CardHeader">
+                    <div>
+                        <span class="CardLabel">03</span>
+                        <h2>Signature</h2>
+                    </div>
+                    <button class="CopyBtn" data-target="signatureOutput" type="button">Copy</button>
+                </header>
+                <div id="signatureOutput" class="JsonOutput" aria-live="polite">your-signature-will-appear-here</div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- ========================================================
+         3. SITE FOOTER
+    ========================================================= -->
+    <footer class="SiteFooter">
+        <div class="FooterContent">
+            <div class="FooterBrand">
+                <div class="BrandLogo">
+                    <span class="BrandLogoIcon">◆</span>
+                    <span class="BrandLogoText">Token<span>Lab</span></span>
+                </div>
+                <p>
+                    Securely decode, verify, and inspect JSON Web Tokens directly within your browser. 
+                    No data is ever sent to our servers.
+                </p>
+            </div>
+
+            <div class="FooterLinks">
+                <div class="FooterColumn">
+                    <h3>Resources</h3>
+                    <a href="#">Documentation</a>
+                    <a href="#">JWT Standard</a>
+                    <a href="#">GitHub Repo</a>
+                </div>
+                <div class="FooterColumn">
+                    <h3>Legal</h3>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="FooterBottom">
+            <p>&copy; 2026 TokenLab. All rights reserved.</p>
+            <div class="StatusIndicator">
+                <span class="StatusDot"></span>
+                All systems operational
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
